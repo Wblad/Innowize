@@ -1,0 +1,93 @@
+/* блок со всеми месяцами года */
+.array_month {
+  height: calc(100% - 8px * 2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  padding: 0;
+}
+
+/* блок месяца (обертка) с заголовком и с div со днями месяца */
+.array_month_element {
+  padding: 0 16px;
+  list-style-type: none;
+}
+
+.array_month_element:hover {
+  background-color: var(--site-color-hover);
+  border-radius: 16px;
+  color: white;
+}
+
+.array_month_element h3 {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+/* блок с днями месяца */
+.array_days {
+  width: 210px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.array_days_element {
+  width: 30px;
+  height: 30px;
+  font-size: 0.8rem;
+  list-style-type: none;
+  text-align: center;
+}
+
+.array_days_element:nth-child(1),
+.array_days_element:nth-child(2),
+.array_days_element:nth-child(3),
+.array_days_element:nth-child(4),
+.array_days_element:nth-child(5),
+.array_days_element:nth-child(6),
+.array_days_element:nth-child(7) {
+  font-weight: bold;
+}
+
+.array_days_element__number {
+  text-align: center;
+}
+
+.array_days_element__circles {
+  display: flex;
+  justify-content: center;
+}
+
+/* дни не входящие в месяц */
+.month_alian_day {
+  color: transparent !important;
+}
+
+/* circles */
+.array_days_element__has_completed_task_circle,
+.array_days_element__has_not_completed_task_circle {
+  width: 6px !important;
+  height: 6px !important;
+  margin: 2px;
+  border-radius: 50%;
+  display: block;
+  background-color: red;
+}
+
+.array_days_element__has_completed_task_circle {
+  background-color: var(--color-task-completed);
+}
+
+.array_days_element__has_not_completed_task_circle {
+  background-color: var(--color-task-not-completed);
+}
+
+.month_alian_day .array_days_element__has_completed_task_circle,
+.month_alian_day .array_days_element__has_not_completed_task_circle {
+  background-color: transparent;
+}

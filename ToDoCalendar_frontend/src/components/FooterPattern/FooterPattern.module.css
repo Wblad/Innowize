@@ -1,0 +1,13 @@
+.footer_pattern__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer_pattern__not_footer {
+  flex: 1 0 auto;
+}
+
+.footer_pattern__footer {
+  flex: 0 0 auto;
+}

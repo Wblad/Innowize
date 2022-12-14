@@ -1,0 +1,146 @@
+/* error */
+
+.error_message {
+  padding: 8px;
+  background-color: var(--danger-hover);
+  color: white;
+  border-radius: 8px;
+}
+
+.error_message:hover {
+  background-color: var(--danger);
+}
+
+/* form */
+
+.form {
+  display: grid;
+  grid-template-rows: min-content auto;
+}
+
+.form h2 {
+  color: var(--site-color);
+}
+
+.form input,
+.form textarea {
+  outline: 0;
+  outline-offset: 0;
+}
+
+/* buttons */
+
+.buttons_block {
+  padding: 4px 0;
+}
+
+.buttons_block button {
+  width: 100%;
+  border: 2px solid var(--site-color);
+  background-color: var(--site-color);
+  color: white;
+  padding: 8px 32px;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.buttons_block button:hover {
+  background-color: var(--site-color-light);
+  border-color: var(--site-color-light);
+}
+
+/* title */
+
+.title_block {
+  padding: 4px 0;
+}
+
+.title_block input {
+  width: calc(100% - 2px * 2 - 8px * 2);
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1.2em;
+}
+
+/* date */
+
+.date_block {
+  padding: 4px 0;
+}
+
+@media screen and (max-width: 761px) {
+  .date_block input {
+    width: calc(50% - 8px * 2 - 2px * 2);
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 762px) {
+  .date_block input {
+    width: calc(25% - 8px * 2 - 2px * 2);
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    padding: 8px;
+  }
+}
+
+/* completed */
+
+.check_block {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.check_block input {
+  display: none;
+}
+
+.check_block label {
+  width: 64px;
+  height: 32px;
+  border-radius: 32px;
+  margin-right: 8px;
+  background-color: var(--color-task-not-completed);
+  display: block;
+  border: 2px solid var(--color-task-not-completed) !important;
+  display: flex;
+  justify-content: left;
+}
+
+.check_block .checked {
+  background-color: var(--color-task-completed) !important;
+  border-color: var(--color-task-completed) !important;
+  justify-content: right;
+}
+
+.check_block label::before {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  display: block;
+  content: '';
+}
+
+/* description */
+
+.description_block {
+  padding: 4px 0;
+}
+
+.description_block > div {
+  height: 100%;
+}
+
+.description_block textarea {
+  width: calc(100% - 2px * 2 - 8px * 2) !important;
+  height: calc(100% - 2px * 2 - 8px * 2 - 16px);
+  border: 2px solid lightgray;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+}

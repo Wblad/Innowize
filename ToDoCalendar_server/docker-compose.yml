@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  frontend:
+    image: pavelinnokentevichgalanin/todocalendar_frontend:latest
+    container_name: todocalendar_frontend
+    ports:
+      - 9001:80
+    depends_on:
+      - backend
+  backend:
+    image: igorlukovets/todocalendar_backend:latest
+    container_name: todocalendar_backend
+    ports:
+      - 7990:8000
+    depends_on:
+      - db
+    env_file: .env
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - .:/app
+    ports:
+      - "5432:5432"
+    env_file: .env
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+    command: --interval 30 todocalendar_frontend todocalendar_backend

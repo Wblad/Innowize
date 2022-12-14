@@ -1,0 +1,143 @@
+/* стили для списка */
+
+.counter_block {
+  font-size: 2em;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.array {
+  margin: 0;
+  padding: 0;
+}
+
+.array_element {
+  list-style-type: none;
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+.array_element:hover {
+  background-color: var(--site-color-hover);
+  color: white;
+}
+
+.task_completed_circle,
+.task_not_completed_circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: block;
+  margin-right: 8px;
+}
+
+.array_element:hover .task_completed_circle,
+.array_element:hover .task_not_completed_circle {
+  border-color: white;
+  background-color: white;
+}
+
+.task_completed_circle {
+  background-color: var(--color-task-completed);
+  border-color: var(--color-task-completed);
+}
+
+.task_not_completed_circle {
+  background-color: var(--color-task-not-completed);
+  border-color: var(--color-task-not-completed);
+}
+
+/* стили для view с часами */
+
+.wrapper {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.time_block {
+  display: flex;
+  color: var(--site-color);
+}
+
+.time_block > span {
+  text-align: center;
+}
+
+.line_hour {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: var(--site-color);
+  width: 1px;
+}
+
+.line_minutes {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 1px;
+}
+
+.task_block {
+  background-color: var(--site-color);
+  padding: 8px 0;
+  border-radius: 12px;
+  margin: 2px 0;
+  color: var(--site-color);
+  text-shadow: 1px 0 white, -1px 0 white, 0 1px white, 0 -1px white,
+    1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+  white-space: nowrap;
+}
+
+/* кнопка переключения режима */
+
+.button_view {
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 64px;
+  background: var(--site-color);
+  border: 2px solid var(--site-color);
+  border-radius: 32px;
+  margin: 32px;
+  padding: 0;
+
+  display: flex;
+  opacity: 0.5;
+}
+
+.button_view:hover{
+  opacity: 1;
+}
+
+.button_view__on {
+  justify-content: start;
+  background-color: var(--color-task-not-completed);
+  border-color: var(--color-task-not-completed);
+}
+
+.button_view__off {
+  justify-content: end;
+
+  background-color: var(--color-task-completed);
+  border-color: var(--color-task-completed);
+}
+
+.button_view span {
+  background-color: white;
+  border-radius: 50%;
+  width: 64px;
+  height: 100%;
+  color: var(--site-color);
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,107 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.background form {
+  width: calc(400px - 48px * 2 - 3px * 2);
+  border: 3px solid rgba(158, 158, 158, 0.25);
+  border-radius: 16px;
+  padding: 32px 48px;
+}
+
+@media (max-width: 761px) {
+  .background form {
+    border: none;
+  }
+}
+
+.background h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.background a {
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+
+.background a:hover {
+  text-decoration: underline;
+}
+
+.background form label {
+  width: 100%;
+  display: block;
+  color: #212529;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.background form label .error_block {
+  position: absolute;
+  background-color: rgb(220, 53, 69, 0.7);
+  z-index: 2;
+  font-size: 0.8rem;
+  padding: 8px;
+  color: white;
+  left: 8px;
+  top: calc(100% - 10px);
+  border-radius: 4px;
+}
+
+.background form label .error_block:hover {
+  background-color: rgb(220, 53, 69, 1);
+}
+
+.background form label .error_block pre {
+  font-family: 'Inter';
+  margin: 0;
+}
+
+.background form input {
+  width: calc(100% - 16px * 2 - 2px * 2);
+  margin: 8px 0;
+  padding: 8px 16px;
+  border: 2px solid rgba(158, 158, 158, 0.25);
+  color: #5a6167;
+  border-radius: 16px;
+  color: black;
+  background-color: #f4f4f4;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.background form input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(158, 158, 158, 0.25);
+}
+
+.background form input[type='submit'] {
+  background-color: var(--color-task-completed);
+  color: white;
+  font-size: 1.2em;
+
+  width: 100%;
+  border: 2px solid var(--color-task-completed);
+}
+
+.background form input[type='submit']:hover {
+  background-color: white;
+  color: var(--color-task-completed);
+}
+
+.input_is_success {
+  border-color: var(--success) !important;
+}
+
+.input_is_not_success {
+  border-color: var(--danger) !important;
+}

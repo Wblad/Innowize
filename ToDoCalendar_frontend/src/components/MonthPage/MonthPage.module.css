@@ -1,0 +1,93 @@
+.array {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.array_element {
+  width: calc(100% / 7);
+  height: calc(100% / 6 - 1px);
+  overflow: hidden;
+  list-style-type: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.array_element:nth-child(7n + 6),
+.array_element:nth-child(7n + 7) {
+  color: var(--color-weekend);
+}
+
+.array_element:hover {
+  background-color: var(--site-color-hover);
+  color: white;
+}
+
+.element_day {
+  width: 100%;
+  height: 33.33%;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.element_date {
+  font-size: 2em;
+  width: 100%;
+  height: 33.33%;
+  text-align: center;
+}
+
+.element_circles {
+  width: 100%;
+  height: 33.33%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 761px) {
+  .element_circles li {
+    list-style-type: none;
+    width: 8px;
+    height: 8px;
+    border: 1px solid black;
+    margin: 4px;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (min-width: 762px) {
+  .element_circles li {
+    list-style-type: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid black;
+    margin: 8px;
+    border-radius: 50%;
+  }
+}
+
+.has_not_completed_task_circle {
+  background-color: var(--color-task-not-completed);
+  border-color: var(--color-task-not-completed) !important;
+}
+
+.has_completed_task_circle {
+  background-color: var(--color-task-completed);
+  border-color: var(--color-task-completed) !important;
+}
+
+.month_alian_day {
+  color: lightgrey !important;
+}
+
+.month_alian_day:hover {
+  background-color: #fff;
+}
